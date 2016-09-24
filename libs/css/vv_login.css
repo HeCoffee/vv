@@ -1,0 +1,124 @@
+.lg_header{
+	width: 100%;
+	overflow: hidden;
+}
+.lg_header .logo  img{
+	vertical-align: middle;
+}
+.lg_header .logo  img:nth-child(2){
+	margin-top: 10px;
+}
+.lg_header .logo{
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	margin-top:0px ;
+	margin-left:40px ;
+}
+.lg_header span{
+	margin-top: 50px;
+	float: right;
+}
+.lg_header span a{
+	font-size: 16px;
+	color: black;
+	margin-right: 30px;
+}
+.lg_header span a:hover{
+	text-decoration: none;
+}
+#content{
+	width: 100%;
+	height: 630px;
+	background: #e2ebe8;
+}
+
+.right_login_box{
+	width: 370px;
+	height: 400px;
+	background: white;
+	position: absolute;
+	top: 165px;
+	right: 180px;
+	z-index: 6;
+	box-shadow: 1px 1px 1px  gray;
+}
+
+.right_login_box .close_login{
+	position: absolute;
+	display: block;
+	cursor: pointer;
+	right: 30px;
+	top: 5px;
+	font-size: 16px;
+	color: dodgerblue;
+	text-decoration: underline;
+}
+
+.right_login_box p{
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	font-size: 14px;
+}
+.right_login_box p a{
+	font-size: 14px;
+	position: initial;
+	color: #ffa500;
+}
+
+
+.right_login_box .input-group-addon{
+	background: white;
+	
+	padding: 3px 12px;
+}
+.right_login_box .input-group{
+	position: absolute;
+	top: 100px;
+	left: 40px;
+	width: 300px;
+}
+.right_login_box .psw{
+	top: 170px;
+}
+.right_login_box .id_code{
+	top: 240px;
+}
+.right_login_box a{
+	font-size: 14px;
+	position: absolute;
+	bottom: 100px;
+	right: 30px;
+}
+.right_login_box .btn{
+	width: 300px;
+	background: #ffa500;
+	border-color: #FFA500;
+	position: absolute;
+	bottom: 50px;
+	left: 40px;
+}
+.right_login_box .btn:hover{
+	background: #ffa500;
+	border-color: #FFA500;
+}
+
+.footer_nav{
+	text-align: center;
+}
+.footer_nav p{
+	margin-top: 10px;
+	line-height: 20px;
+	color: #777777;
+}
+.footer_nav p a{
+	color: #777777;
+}
+
+.right_login_box #commentForm label{
+	position: absolute;
+	top: 33px;
+	left: 0px;
+}
+

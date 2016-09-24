@@ -1,0 +1,162 @@
+.lg_header{
+	width: 100%;
+	overflow: hidden;
+}
+.lg_header .logo  img{
+	vertical-align: middle;
+}
+.lg_header .logo  img:nth-child(2){
+	margin-top: 10px;
+}
+.lg_header .logo{
+	display: inline-block;
+	height: 100px;
+	line-height: 100px;
+	margin-top:0px ;
+	margin-left:40px ;
+}
+.lg_header span{
+	margin-top: 50px;
+	float: right;
+}
+.lg_header span a{
+	font-size: 16px;
+	color: black;
+	margin-right: 30px;
+}
+.lg_header span a:hover{
+	text-decoration: none;
+}
+
+
+.footer_nav{
+	text-align: center;
+}
+.footer_nav p{
+	margin-top: 10px;
+	line-height: 20px;
+	color: #777777;
+}
+.footer_nav p a{
+	color: #777777;
+}
+
+
+
+#content{
+	width: 100%;
+	height: 550px;
+}
+#content .step{
+	width: 100%;
+	overflow: hidden;
+	
+}
+#content .step .circle{
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	width: 25px;
+	font-size: 14px;
+	background: #DCDCDC;
+	color: white;
+	border-radius: 50%;
+}
+#content .step .now{
+	
+	background: #FF9801;
+}
+#content .step .now_bd{
+	border-bottom: 1px solid #FF9801;
+}
+#content .step ul{
+	width: 100%;
+	border-bottom: 1px solid #DCDCDC;
+	text-align: center;
+}
+#content .step ul li{
+	display: inline-block;
+	width: 216px;
+	height: 69px;
+	line-height: 70px;
+	font-size: 16px;
+	color: black;
+	
+}
+#content .rg_bigbox{
+	width: 100%;
+	height: 380px;
+	
+}
+#content .rg_box{
+	width: 50%;
+	margin: 0 auto;
+	height: 376px; ;
+	position: relative;
+}
+#content .rg_box .input-group-addon{
+	padding: 3px 12px;
+	background: white;
+}
+#content .rg_box .posi{
+	background: #FFA500;
+	border-color: #FFA500;
+	outline: 0;
+	position: absolute;
+	top: 170px;
+	left: 392px;
+}
+#content .rg_box p{
+	font-size: 14px;
+}#content .rg_box p a{
+	font-size: 14px;
+}
+#content .rg_box .nextstep{
+	background: #FFA500;
+	border-color: #FFA500;
+	outline: 0;
+	width: 398px;
+	height: 45px;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+#form1 label{
+	position: absolute;
+	top: 33px;
+	left: 0px;
+}
+
+#form2 label{
+	position: absolute;
+	top: 33px;
+	left: 0px;
+}
+
+
+
+#content .rg_box #form2 p{
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+}
+#content .rg_box #form2 p span{
+	font-size: 14px;
+}
+#content .rg_box .smallBox{
+	text-indent: 30px;
+}
+#content .rg_box .smallBox p{
+	font-size: 20px;
+}
+#content .rg_box .smallBox a{
+	color: #fda500;
+	font-size: 16px;
+	margin-left: 30px;
+}
+#content .rg_box .smallBox a:last-child{
+	color: #c70018;
+}
+
+

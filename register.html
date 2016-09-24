@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/css/vv_common.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/css/vv_register.css"/>
+		<script src="libs/js/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-validation-1.15.0/dist/jquery.validate.extend.methods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-validation-1.15.0/dist/jquery.metadata.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-validation-1.15.0/src/localization/messages_zh.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-cookie/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/js/vv_register.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="lg_header">
+			<h3 class="logo">
+				<a title="为为商城 http://www.mallvv.com/" href="#"><img src="libs/images/index/logo.png"/></a>
+				<img src="libs/images/index/header-left.png"/>
+			</h3>
+			<span id="">
+				<a href="#">帮助中心</a>
+				<a href="#">关于我们</a>
+			</span>
+		</div>
+		<div class="clear10"></div>
+		<div id="content">
+			<div class="step">
+				<ul>
+					<li class="now_bd"><span class="circle now">1</span>设置用户名</li>
+					<li><span class="circle">2</span>填写账号信息</li>
+					<li><span class="circle">3</span>注册成功</li>
+				</ul>
+			</div>
+			<div class="rg_bigbox">
+				<div class="rg_box">
+					<form id="form1">
+						<br /><br />
+					<div class="" style="width:400px;margin: 0 auto;">
+						<div class="input-group" style="width: 400px;">
+				            <span class="input-group-addon"><img src="libs/images/login_register/register-tel-icon.png"/></span>
+				            <input type="text" class="form-control" name="userPhone" id="userPhone" placeholder="请输入您的手机号码" >
+				        </div><br /><br />
+				        <div class="input-group" style="width: 400px;">
+							<span class="input-group-addon"><img src="libs/images/login_register/register-yanzhengma-icon.png"/></span>
+							<input type="text" class="form-control" placeholder="请输入验证码">
+							<span class="input-group-addon">1325</span>
+						</div><br /><br />
+						<div class="input-group" style="width: 270px;">
+				            <span class="input-group-addon"><img src="libs/images/login_register/register-yanzhengma-icon.png"/></span>
+				            <input type="text" class="form-control" placeholder="请输入手机验证码 ">
+				        </div>
+				        <button type="button" class="btn btn-primary posi" 
+						    data-toggle="button"> 获取手机验证码
+						</button>
+						<br />
+						<p><input type="checkbox" name="" id="" value="" checked="checked"/>我已阅读并同意<a href="#">服务协议</a></p>
+						<button type="button" class="btn btn-primary nextstep" 
+						    data-toggle="button"> 下一步
+						</button>					
+					</div>
+					</form>					
+				</div>
+			</div>
+			
+			<div class="rg_bigbox" style="display: none;">
+				<div class="rg_box">
+					<form id="form2">
+					<div class="" style="width:400px;margin: 0 auto;">
+						<p>登录名：<span></span></p>
+						<p>设置登录密码<span>&nbsp;登录验证，保护账户信息</span></p>
+						<br />
+						<div class="input-group" style="width: 400px;">
+				            <span class="input-group-addon"><img src="libs/images/index/password-icon2.png"/></span>
+				            <input type="password" class="form-control isPwd required" name="psw" id="psw1" placeholder="请输入密码" >
+				        </div>
+				        <br /><br />
+				        <div class="input-group" style="width: 400px;">
+				            <span class="input-group-addon"><img src="libs/images/index/password-icon2.png"/></span>
+				            <input type="password" class="form-control" name="psw2" id="" placeholder="请确认密码" >
+				        </div>
+				        <br />
+				        <p>设置用户名</p>
+				        <div class="input-group" style="width: 400px;">
+				            <span class="input-group-addon"><img src="libs/images/index/user-icon.png"/></span>
+				            <input type="text" class="form-control required stringCheck" name="userName" id="userName" placeholder="用户名一旦设置不能更改" >
+				        </div>
+				        <br /><br />
+						<button type="button" class="btn btn-primary nextstep" 
+						    data-toggle="button"> 提交
+						</button>					
+					</div>
+					</form>					
+				</div>
+			</div>
+			
+			<div class="rg_bigbox" style="display: none;">
+				<div class="rg_box">
+					<div class="" style="width:400px;margin: 100px auto;">
+						<img src="libs/images/login_register/success-icon.png" style="float: left;"/>
+						<div class="smallBox">
+							<p>恭喜你，注册会员成功</p>
+							<a href="#">立即购物</a>
+							<a href="#">进入会员中心</a>
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear10"></div>
+		<div class="footer_nav">
+			<p><a href="#">首页</a> | <a href="#">招聘英才</a> | <a href="#">合作及洽谈</a> | <a href="#">联系我们</a> | <a href="#">关于我们</a> | <a href="#">友情链接</a></p>
+			<p>Copyright 2015 沪ICP备08001311号 | 营业执照</p>
+		</div>
+	</body>
+</html>

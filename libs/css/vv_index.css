@@ -1,0 +1,218 @@
+.clear10{
+	clear: both;
+	height: 10px;
+}
+#content{
+	width: 1225px;
+	background: white;
+}
+#content .hot_production{
+	width: 100%;
+	
+}
+#content .hot_production .hot_production_left{
+	float: left;
+	width: 1000px;
+}
+#content .hot_production .hot_production_left ul{
+	width: 990px;
+	border-bottom: 1px solid #D5D5D5;
+}
+#content .hot_production .hot_production_left li{
+	text-align: center;
+	width: 198px;
+}
+#content .hot_production .hot_production_left li a:hover{
+	background: white;
+}
+#content .hot_production .hot_production_left li a{
+	font-size: 14px;
+	font-weight: bold;
+	color: #777;
+}
+#content .hot_production .hot_production_show dl{
+	text-align: center;
+	padding-top: 20px;
+	width: 200px;
+	overflow: hidden;
+	float: left;
+}
+#content .hot_production .hot_production_show dl dd a{
+	color: #777777;
+	font-size: 14px;
+}
+#content .hot_production .hot_production_show dl dd a:hover{
+	color: #FFA500;
+}
+#content .hot_production .hot_production_show dl dd span{
+	font-weight: bold;
+	color: #FFA500;
+}
+#content .hot_production .hot_production_show img{
+	width: 160px;
+	height: 160px;
+}
+.hot_border{
+	border-bottom: 2px solid #FFA500;
+}
+
+
+.hot_production_right{
+	float: right;
+	width: 220px;
+	
+}
+.hot_production_right .hot_production_right_box1{
+	width: 100%;
+	height: 158px;
+	margin-top: 15px;
+	border: 1px solid #DDDDDD;
+	margin-bottom: 10px;
+}
+.hot_production_right .hot_production_right_box1 ul{
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #DDDDDD;
+	padding-left: 15px;
+	
+}
+.hot_production_right .hot_production_right_box1 ul li{
+	font-size: 14px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+}
+.hot_production_right .hot_production_right_box1 .right_news{
+	border: none;
+	
+}
+.hot_production_right .hot_production_right_box1 .right_news li{
+	font-size: 12px;
+	height: 20px;
+	line-height: 20px;
+	cursor: pointer;
+}
+.hot_production_right .hot_production_right_box1 .right_news li:hover{
+	color: #FFA500;
+}
+
+#content .commend{
+	width: 1200px;
+	overflow: hidden;
+	margin-left: 25px;
+}
+.commend .commend_title{
+	display: block;
+	width: 100%;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	background: url(../images/index/tips.jpg) 85px 6px no-repeat;
+	line-height: 30px;
+}
+#content .commend li{
+	float: left;
+}
+.stairs_box{
+	position: relative;
+	width: 1200px;
+	height: 80px;	
+	margin-left: 25px;
+	background: white;
+	border-bottom: 1px solid #DDDDDD;
+}
+.stairs_box span{
+	float: left;
+	display: inline-block;
+	width: 100px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 15px;
+	color: #FFA500;
+}
+.stairs_box ul{
+	padding-top:25px;
+}
+.stairs_box ul li{
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #777777;
+	margin: 0px 10px;
+}
+
+.now_stairs{
+	background: #FFA500;
+	color: white!important;
+}
+
+.floor{
+	position: relative;
+	width: 1200px;
+	overflow: hidden;	
+	margin-left: 25px;
+	
+}
+.floor .floor_title{
+	height: 40px;	
+	
+	border-bottom: 1px solid deepskyblue;
+}
+.floor .floor_title span{
+	font-size: 22px;
+}
+.floor .floor_title ul{
+	float: right;
+	margin-top:15px ;
+	
+}
+.floor .floor_title ul li{
+	float: left;
+	margin: 0px 10px ;
+	cursor: pointer;
+	transition: color 0.3s ease-in-out; 
+}
+.floor .floor_title ul li:hover{
+	color: #FFA500;
+}
+.floor .swiper_box{
+	width: 500px;
+	height: 320px;
+	float: left;
+}
+.floor ul{
+	float: left;
+}
+.floor ul li{
+	float: left;
+}
+.right_floors{
+	width: 480px;
+	position: absolute;
+	top: 40px;
+	right: 0px;
+}
+.right_floors ul{
+	float: left;
+}
+.right_floors ul li{
+	float: left;
+}
+.promise{
+	position: relative;
+	width: 100%;
+	overflow: hidden;	
+	padding-left: 25px;
+	padding-top: 20px;
+	border-top: 5px solid #DDDDDD;
+	border-bottom: 5px solid #DDDDDD;
+}
+.promise dl{
+	width: 200px;
+	text-align: center;
+	float: left;
+}
