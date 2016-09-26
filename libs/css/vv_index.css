@@ -1,3 +1,9 @@
+#bigbox{
+	
+	/*width: 1366px;*/
+	margin: 0 auto;
+}
+
 .clear10{
 	clear: both;
 	height: 10px;

@@ -40,7 +40,7 @@ $(function(){
 			$('.step li:eq(1)').addClass('now_bd');
 			$('.step li span:eq(1)').addClass('now');
 			user=$('.rg_bigbox input[name=userPhone]').val();
-			$('#form2 span:eq(0)').html(tet);
+			$('#form2 span:eq(0)').html(user);
 		}
 	})
 	$('#form2 .btn').click(function(){

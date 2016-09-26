@@ -1,5 +1,6 @@
 .footerbox{
-	widows: 100%;
+	width: 100%;
+	min-width: 1230px;
 	overflow: hidden;
 	border: 1px solid #DDDDDD;
 }

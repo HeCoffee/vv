@@ -1,4 +1,5 @@
 $(function() {
+	$('img').attr('draggable','false');
 	$('#address_city li').click(function() {
 		var num = $('#address_city li').index(this);
 		$('#address_city li').removeClass().eq(num).addClass('target_city');
@@ -119,14 +120,14 @@ $(function() {
 	var showT = 0;
 	$('.right_cart').click(function() {
 		if(showT == 0) {
-			$('.right_cart_ul').animate({
+			$('.right_cart_ul').stop().animate({
 				right: '38px'
 			}, 400, function() {
 				showT = 1;
 			})
 		}
 		if(showT == 1) {
-			$('.right_cart_ul').animate({
+			$('.right_cart_ul').stop().animate({
 				right: '-162px'
 			}, 400, function() {
 				showT = 0;
@@ -134,7 +135,7 @@ $(function() {
 		}
 	})
 	$('.right_cart_ul_icon').click(function() {
-		$('.right_cart_ul').animate({
+		$('.right_cart_ul').stop().animate({
 			right: '-162px'
 		}, 400, function() {
 			showT = 0;
@@ -198,11 +199,21 @@ $(function() {
 
 	if(window.location.search) {
 		var name=window.location.search;
-		var UserName=name.split('=');
-		console.log(UserName[1]);
-		var str = UserName[1] + ' 您好，欢迎来到<a href="#">为为商城</a>'
-		$('.header_nav_right span').html(str);
-
+		name=name.replace('?','');
+//		var arr=name.split('?');
+//		name=arr[1]
+		console.log(name);
+		if(name.search('user')>=0){
+			var star=name.search('user');
+			name=name.slice(star,name.length);
+			console.log(name);
+			var data=name.split('&');
+			var UserName=data[0].split('=');
+			var str = UserName[1] + ' 您好，欢迎来到<a href="#">为为商城</a>'
+			$('.header_nav_right span').html(str);
+			$('.right_login_box').remove();
+		}
+		
 	}
 
 })

@@ -1,0 +1,246 @@
+.content_box{
+	width: 93%;
+	overflow: hidden;
+	margin: 0 40px;
+	position: relative;
+}
+.content_box p{
+	color: #777777;
+}
+.content_box a{
+	color: #999;
+}
+.content_box .leftBox{
+	/*width: 206px;*/
+	width: 16%;
+	overflow: hidden;
+	float: left;
+	background: white;
+	border: 1px solid #C8C8C8;
+}
+.content_box .leftBox .leftTitle{
+	display: block;
+	height: 35px;
+	color: #333;
+	font-size: 16px;
+	line-height: 35px;
+	background: #F5F5F5;
+}
+.content_box .leftBox .listbtn{
+	display: inline-block;
+	height: 11px;
+	width: 11px;
+	cursor: pointer;
+	background: url(../images/list/2014shop_background_img.png) no-repeat;
+}
+.content_box .leftBox .listbtn:hover{
+	background: url(../images/list/2014shop_background_img.png)-11px 0px no-repeat;
+}
+.content_box .leftBox ul li{
+	
+	line-height: 20px;
+	width: 100%;
+}
+.content_box .leftBox ul li ul{
+	text-indent: 20px;
+}
+.content_box .leftBox ul li ul li ul {
+	text-indent: 40px;
+}
+.rightBox{
+	width: 83%;
+	float: right;
+	overflow: hidden;
+}
+.rightBox .rightTitle{
+	width: 100%;
+	height: 38px;
+	background: #F7F7F7;
+	border: 1px solid #D7D7D7;
+	position: relative;
+}
+.rightBox .rightTitle span{
+	display: inline-block;
+	float: left;
+	width: 7%;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+}
+.rightBox .rightTitle ul{
+	margin: 0;
+	float: left;
+	position: absolute;
+	left: 7%;
+	width: 30%;
+	border-right: 1px solid #E6E6E6;
+}
+.rightBox .rightTitle ul li{
+	height: 38px;
+	width: 25%;
+	line-height: 38px;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	border-left: 1px solid #E6E6E6;
+}
+.rightBox .rightTitle  .now_sq{
+	background: white;
+	border-bottom: 2px solid white;
+}
+.rightBox .rightTitle .icon_down{
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: url(../images/list/2014shop_background_img.png)1px -12px no-repeat;
+}
+.rightTitle .title_middle{
+	width: 20%;
+	margin: 0 auto;
+	line-height: 38px;
+}
+.rightTitle .title_middle span{
+	display: inline-block;
+	width: 8%;
+	height: 20px;
+	top: 26%;
+	line-height: 20px;
+	background: white;
+	float: none;
+	position: absolute;
+	border: 1px solid #E6E6E6;
+	z-index: 2;
+}
+.rightTitle .title_right{
+	width: 17%;
+	position: absolute;
+	top: 0px;
+	right: 0%;
+	height: 38px;
+	line-height: 38px;
+}
+.rightTitle .title_right span{
+	display: inline-block;
+	width: 30%;
+	height: 20px;
+	line-height: 20px;
+	background: white;
+	margin-top: 8px;
+	margin-left: 15px;
+	border: 1px solid #E6E6E6;
+	cursor: pointer;
+}
+.rightTitle .title_right span:hover{
+	background: #FFA500;
+	color: white;
+	border-color: #FF0000;
+}
+
+
+.content_box .prd_posi{
+	width: 30%;
+	overflow: hidden;
+	border: 1px solid #E6E6E6;
+	position: absolute;
+	left: 45%;
+	top: 68px;
+	display: none;
+	background: white;
+	text-indent: 15px;
+	padding-top: 10px;	
+}
+.content_box .prd_posi dl dd ul li{
+	float: left;
+	margin: 0 20px;
+}
+.content_box .prd_posi .province{
+	width: 100%;
+	overflow: hidden;
+	float: left;
+}
+.content_box .prd_posi .province dt{
+	width: 30%;
+	margin: 0;
+	float: left;
+}
+.content_box .prd_posi .province dd{
+	float: left;
+	width: 60%;
+	border-left: 1px dotted #777;
+}
+.content_box .prd_posi .province dd ul li{
+	margin: 0;
+}
+.content_box .prd_posi .provinceLi{
+	width: 25%;
+	float: left;
+}
+.content_box .prd_posi p{
+	margin: 0;
+	height: 20px;
+	line-height: 20px;
+	background: #E6E6E6;
+}
+.content_box .prd_posi a{
+	color: #555555;
+}
+.rightBox .list_BigBox{
+	width: 100%;
+	min-height: 600px;
+	overflow: hidden;
+}
+.rightBox .list_BigBox .list_Box{
+	padding-top: 5px;
+	width: 23%;
+	overflow: hidden;
+	text-align: left;
+	float: left;
+	border: 1px solid #D7D7D7;
+	margin-left: 16px;
+	margin-bottom: 10px;
+}
+
+.rightBox .list_BigBox .list_Box:hover{
+	border: 1px solid #FFA500;
+}
+
+.rightBox .list_BigBox .list_Box dl{
+	margin: 0;
+}
+.rightBox .list_BigBox .list_Box span{
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFA500;
+}
+.rightBox .list_BigBox .list_Box dd .out_price{
+	font-size: 14px;
+	color: #999999;
+	text-decoration: line-through;
+	margin-left: 10px;
+}
+.rightBox .list_BigBox .list_Box p{
+	margin: 0;
+	height: 30px;
+	line-height: 30px;
+}
+
+.rightBox .list_btnBox{
+	width: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.rightBox .list_btnBox ul{
+	width: 100%;
+}
+.rightBox .list_btnBox ul li{
+	border: 1px solid #D7D7D7;
+	display: inline-block;
+	height: 30px;
+	line-height: 20px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.rightBox .list_btnBox .noclick{
+	cursor:initial;
+	background: #FAFAFA;
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>何健东-为为商城-列表页</title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/Swiper-3.3.1/dist/css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/css/vv_list.css"/>
+		<script src="libs/js/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/js/vv_list.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery-cookie/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/Swiper-3.3.1/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header_box"></div>
+		<div class="clear10"></div>
+		<div class="content_box">
+			<p><img src="libs/images/list/icon_home.png"/><a href="index.html">首页</a>><a href="">建材</a> > 地板/榻榻米</p>
+			<div class="clear10"></div>
+			<!--分类下拉列表-->
+			<div class="leftBox">
+				<span class="leftTitle">
+					分类筛选
+				</span>
+				<ul style="text-indent: 5px;">
+					<li><i class="listbtn"></i>建材
+						<ul>
+							<li><i class="listbtn"></i>地板/榻榻米
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>瓷砖/大理石/陶瓷
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>卫浴
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>集成吊顶
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>橱柜
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>淋浴房
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>移门衣柜
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>墙纸
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>门窗
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>净水器/水处理
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>定制楼梯
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+							<li><i class="listbtn"></i>保险箱
+								<ul>
+									<li><a href="#">实木地板</a></li>
+									<li><a href="#">强化复合地板</a></li>
+									<li><a href="#">木地板</a></li>
+									<li><a href="#">实木复合地板</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--排序方式-->
+			<div class="rightBox">
+				<div class="rightTitle">
+					<span>排序方式：</span>
+					<ul>
+						<li class="now_sq">默认</li>
+						<li>销量<i class="icon_down"></i></li>
+						<li>人气<i class="icon_down"></i></li>
+						<li>价格<i class="icon_down"></i></li>
+					</ul>
+					<div class="title_middle">
+						商品所在地：
+						<span class="">不限地区<i class="glyphicon glyphicon-chevron-down"></i></span>
+					</div>
+					<div class="title_right">
+						<span id="">上一页</span>
+						<span id="">下一页</span>
+					</div>
+				</div>
+				
+				<div class="clear10"></div>
+				<div class="list_BigBox">
+					<div class="list_Box">
+						<dl>
+							<dt><a href="#"><img src="libs/images/list/list1.jpg"/></a></dt>
+							<dd><a href="#">梵瓦伦 仿古实木复合地板 662 平方米限上海地区交环以内免费送货（三岛费</a>
+								<br />
+								<span id="">¥198.00</span>
+								<span class="out_price">¥388.00</span>
+								<p>库存100</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="list_btnBox">
+					<ul>
+						<li>首页</li>
+						<li>上一页</li>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>下一页</li>
+						<li>末页</li>
+					</ul>
+				</div>
+			</div>
+			<!--商品所在地-->
+			<div class="prd_posi">
+				<dl>
+					<dt>常用地区</dt>
+					<dd>
+						<ul>
+							<li><a href="">北京</a></li>
+							<li><a href="">天津</a></li>
+							<li><a href="">上海</a></li>
+							<li><a href="">海外</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<div class="clear10"></div>
+				<dl>
+					<dt>省份</dt>
+				</dl>
+				<div class="provinceLi">
+					<dl class="province">
+						<dt>A</dt>
+						<dd>
+							<ul>
+								<li><a href="#">安徽</a></li>
+								<li><a href="#">澳门</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>C</dt>
+						<dd>
+							<ul>
+								<li><a href="#">重庆</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>F</dt>
+						<dd>
+							<ul>
+								<li><a href="#">福建</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>G</dt>
+						<dd>
+							<ul>
+								<li><a href="#">广东</a></li>
+								<li><a href="#">甘肃</a></li>
+								<li><a href="#">广西</a></li>
+								<li><a href="#">贵州</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="provinceLi">
+					<dl class="province">
+						<dt>H</dt>
+						<dd>
+							<ul>
+								<li><a href="#">海南</a></li>
+								<li><a href="#">河北</a></li>
+								<li><a href="#">河南</a></li>
+								<li><a href="#">黑龙江</a></li>
+								<li><a href="#">湖北</a></li>
+								<li><a href="#">湖南</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>J</dt>
+						<dd>
+							<ul>
+								<li><a href="#">江苏</a></li>
+								<li><a href="#">江西</a></li>
+								<li><a href="#">吉林</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="provinceLi">
+					<dl class="province">
+						<dt>N</dt>
+						<dd>
+							<ul>
+								<li><a href="#">辽宁</a></li>
+								<li><a href="#">内蒙古</a></li>
+								<li><a href="#">宁夏</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>Q</dt>
+						<dd>
+							<ul>
+								<li><a href="#">青海</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>S</dt>
+						<dd>
+							<ul>
+								<li><a href="#">山东</a></li>
+								<li><a href="#">山西</a></li>
+								<li><a href="#">陕西</a></li>
+								<li><a href="#">四川</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="provinceLi">
+					<dl class="province">
+						<dt>T</dt>
+						<dd>
+							<ul>
+								<li><a href="#">台湾</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>X</dt>
+						<dd>
+							<ul>
+								<li><a href="#">西藏</a></li>
+								<li><a href="#">新疆</a></li>
+								<li><a href="#">香港</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>Y</dt>
+						<dd>
+							<ul>
+								<li><a href="#">云南</a></li>
+							</ul>
+						</dd>
+					</dl>
+					<dl class="province">
+						<dt>Z</dt>
+						<dd>
+							<ul>
+								<li><a href="#">浙江</a></li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="clear10"></div>
+				<p><a href="#">不限地区</a></p>
+			</div>
+		</div>
+		<div class="clear10"></div>
+		<div id="list_footer"></div>
+	</body>
+</html>
