@@ -54,7 +54,12 @@ $(function(){
 		}
 		var str="";
 		for(var i=0;i<obj.length;i++){
-			str+='<div class="list_Box"><dl><dt><a href="#"><img src="';
+			if(i>0){
+				str+='<div class="list_Box"><dl><dt><a href="product1.html"><img src="';
+			}
+			else{
+				str+='<div class="list_Box"><dl><dt><a href="product.html"><img src="';
+			}
 			str+=obj[i].src+'"/></a></dt>';
 			str+='<dd><a href="#">'+obj[i].introduction+'</a><br /><span>¥';
 			str+=obj[i].price+'</span>';
@@ -62,7 +67,6 @@ $(function(){
 			str+=obj[i].stock+'</p></dd></dl></div>';
 		}
 		$('.rightBox .list_BigBox').html(str);
-		console.log(str);
 		console.log(page);
 	})
 	

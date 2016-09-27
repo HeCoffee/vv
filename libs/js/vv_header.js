@@ -5,6 +5,7 @@ $(function() {
 		$('#address_city li').removeClass().eq(num).addClass('target_city');
 		$('.city').eq(0).html('<span class="city">送至：' + $('#address_city li').eq(num).html() + '<i class="icon"></i></span>')
 	})
+	//移动上去显示出城市菜单
 	$('.city').hover(function() {
 		$(this).css({
 			border: '1px solid #DDDDDD',
@@ -24,7 +25,9 @@ $(function() {
 		$('.icon', this).toggleClass('icon2');
 		$('#address_city').hide();
 	})
-
+	
+	
+	//移动上去显示出城市菜单
 	$('#address_city').hover(function() {
 		$('.city').css({
 			border: '1px solid #DDDDDD',
@@ -43,6 +46,8 @@ $(function() {
 		$('#address_city').hide();
 	});
 
+
+	//移动上去显示出下拉菜单
 	$('.header_nav_right li').hover(function() {
 		var num = $('.header_nav_right li').index(this);
 		if(num == 2) {
@@ -74,6 +79,10 @@ $(function() {
 			display: 'none'
 		})
 	})
+	
+	
+	
+	//移动上使下拉菜单不消失
 	$('.nav_ul ul').hover(function() {
 		var num = $('.nav_ul ul').index(this);
 		if(num > 1) {
@@ -104,7 +113,10 @@ $(function() {
 		})
 		$('.cart').hide();
 	});
-
+	
+	
+	
+	//移动上去显示小购物车
 	$('.cart').hover(function() {
 		$(this).show();
 		$('.my_cart').css({
@@ -116,7 +128,8 @@ $(function() {
 			borderBottom: '1px solid #ddd'
 		});
 	});
-
+	
+	//点击弹出右边购物车
 	var showT = 0;
 	$('.right_cart').click(function() {
 		if(showT == 0) {
@@ -215,5 +228,24 @@ $(function() {
 		}
 		
 	}
-
+	//小购物车删除 购物信息
+	$('.closeli').click(function(){
+		$(this).parent().remove();
+	});
+	
+	//右边购物车删除购物信息
+	$('.closeLi').click(function(){
+		$(this).parent().remove();
+	});
+	
+	
+	$('#go_cart1').click(function(){
+		window.location.href='shopping_cart.html';
+	})
+	
+	$('#go_cart').click(function(){
+		window.location.href='shopping_cart.html';
+	})
+	
+	
 })

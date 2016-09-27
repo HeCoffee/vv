@@ -1,6 +1,11 @@
 $(function(){
 	$('.product_header').load('header.html',function(){
 		$('.kinds .btn').trigger('click');
+		//加载时 判断是否已经有商品在购物车
+		if($.cookie('cartli')!=undefined){
+		var arr1=JSON.parse($.cookie('cartli'));
+		addcart(arr1);
+		}
 	});
 	$('.product_footer').load('footer.html');
 	$(".bigPic").jqueryzoom({
@@ -63,7 +68,152 @@ $(function(){
 	
 	
 	
+	//加载评论的函数
+	$.get("libs/JSON/assessdata.json",function(data){
+		console.log(data);
+		var oLi='';
+		if(data.length==0){
+			oLi='<li><p>暂无评论</p></li>';
+		}
+		else{
+			for(var i=0;i<data.length;i++){
+				oLi+='<li><p>'+data[i].assess+'</p><br /><span id="">'+data[i].user+'</span></li>';
+			}
+		}
+		
+		$('.appraise_area ul').html(oLi);
+		
+	});
+		
+	//创建产品对象
+	function productObj(id){
+		var obj={};
+		obj.src=$('.imglist img:first').prop('src');
+		var num=obj.src.search('libs');
+		obj.src=obj.src.substring(num);
+		obj.title=$('.goods_summary p:eq(0)').text();
+		obj.price=$('.goods_middle strong:eq(1)').text();
+		obj.price=obj.price.replace('¥','');
+		obj.account=$('.account_box input').val();
+		obj.id=id;
+		return obj;
+//		arr.push(obj);
+//		var cookicData=JSON.stringify(arr);
+//		$.cookie('cartli',cookicData,{expires:7});
+	}
 	
+	function addcart(arr){
+		//添加到两边购物车
+		var str1='';
+		var str2='';
+		
+		for(var j=0;j<arr.length;j++){
+			console.log(123);
+			var pro_price=parseInt(arr[j].price);
+			str1+='<li><img src="';
+			str1+=arr[j].src+'"/><dl><dt><a href="#">';
+			str1+=arr[j].title+'</a></dt><dd>¥';
+			str1+=pro_price.toFixed(2)+'×'+arr[j].account+'</dd></dl><span class="closeli">×</span></li>';
+			str2+='<li><img src="';
+			str2+=arr[j].src+'"/><dl><dt><a href="#">';
+			str2+=arr[j].title+'</a></dt><dd><span>¥';
+			str2+=pro_price.toFixed(2)+'</span>×'+arr[j].account+'</dd></dl>';
+			str2+='<span class="closeLi">×</span></li>';
+		}
+		$('.cart ul').html(str1);
+		$('#right_cart_ul').html(str2);
+		//重新加载删除功能
+		//小购物车删除 购物信息
+		$('.closeli').click(function(){
+			var title=$(this).siblings('dl').children('dt').children('a').text();
+			deletcartDate(title);
+			$(this).parent().remove();
+		});
+		
+		//右边购物车删除购物信息
+		$('.closeLi').click(function(){
+			var title=$(this).siblings('dl').children('dt').children('a').text();
+			deletcartDate(title);
+			$(this).parent().remove();
+			
+		});	
+	}
+	
+	
+	//删除cookice数据
+	function deletcartDate(txt){
+		var arr=JSON.parse($.cookie('cartli'));
+		for(var i=0;i<arr.length;i++){
+			if(arr[i].title==txt){
+//				arr[i].account=parseInt(arr[i].account)+parseInt($('.account_box input').val());
+//				none=1;
+				break;
+				console.log(1);
+			}
+		}
+		arr.splice(i,1);
+		addcart(arr);
+		//删除完成当前页面，保存cookice
+		var cookicData=JSON.stringify(arr);
+		$.cookie('cartli',cookicData,{expires:7});
+		
+		
+		
+	}
+	
+	
+	
+	
+	//添加按钮功能
+	$('#join').click(function(){
+		var id=$('.goods_summary p:eq(0)').attr('idcode');
+		var prObj=new productObj(id);
+		
+		
+		if($.cookie('cartli')==undefined){
+			var arr=[];
+			arr.push(prObj);
+		}else{
+			var arr=JSON.parse($.cookie('cartli'));
+			var none=0;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].id==id){
+					arr[i].account=parseInt(arr[i].account)+parseInt($('.account_box input').val());
+					none=1;
+					break;
+				}
+			}
+			if(none==0){
+				arr.push(prObj);
+			}
+		}
+		
+		//添加到两边购物车
+		addcart(arr);
+		
+		
+		$('.right_cart').trigger('click');
+		var timer=window.setTimeout(function(){
+			$('.right_cart').trigger('click');
+		},2000)
+		
+		//操作完当前页面，保存cookice
+		var cookicData=JSON.stringify(arr);
+		$.cookie('cartli',cookicData,{expires:7});
+		
+//		var obj={};
+//		obj.src=$('.imglist img:first').prop('src');
+//		var num=obj.src.search('libs');
+//		obj.src=obj.src.substring(num);
+//		obj.title=$('.goods_summary p:eq(0)').text();
+//		obj.price=$('.goods_middle strong:eq(1)').text();
+//		obj.price=obj.price.replace('¥','');
+//		obj.account=$('.account_box input').val();
+//		arr.push(obj);
+//		var cookicData=JSON.stringify(arr);
+//		$.cookie('cartli',cookicData,{expires:7});
+
+	});
 	
 	
 	
