@@ -86,6 +86,7 @@
 }
 .rightBox .rightTitle  .now_sq{
 	background: white;
+	color: #FFA500;
 	border-bottom: 2px solid white;
 }
 .rightBox .rightTitle .icon_down{
@@ -94,6 +95,15 @@
 	height: 8px;
 	background: url(../images/list/2014shop_background_img.png)1px -12px no-repeat;
 }
+
+.rightBox .rightTitle .icon_up{
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	background: url(../images/list/2014shop_background_img.png)-14px -11px no-repeat;
+}
+
+
 .rightTitle .title_middle{
 	width: 20%;
 	margin: 0 auto;

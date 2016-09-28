@@ -103,6 +103,7 @@
 					<li><a href="#">餐桌</a></li>
 				</ul>
 				<div class="my_cart">
+					<span class="goods_num">1</span>
 					<span class="cart_icon"></span>
 					我的购物车
 					<i class="icon"></i>
@@ -149,7 +150,7 @@
 					</li>
 				</ul>
 				<div class="checkout">
-					<p></p>
+					<p class="goods_charge">共<b>1</b>种商品，总计金额<b>¥198.00</b></p>
 					<br />
 					<input type="button" id="go_cart1" value="结算购物车中的商品" />
 				</div>
@@ -161,6 +162,7 @@
 							<img src="libs/images/index/default_user_portrait.gif" width="28px" height="28px"/>
 						</span>
 						<span class="right_cart">
+							<span class="goods_num">1</span>
 							<span class="cart_icon"></span>
 							购<br />物<br />车
 						</span>
@@ -186,6 +188,7 @@
 						<span class="closeLi">×</span>
 					</li>
 				</ul>
+				<p class="goods_charge">共<b>1</b>种商品，总计金额<b>¥198.00</b></p>
 				<button type="button" class="btn btn-primary" id="go_cart">结算购物车的商品</button>
 			</div>
 			<div class="right_login_box">
@@ -201,8 +204,8 @@
 				</div>
 				<div class="id_code input-group">
 					<span class="input-group-addon"><img src="libs/images/index/register-yanzhengma-icon.png"/></span>
-					<input type="text" class="form-control" placeholder="验证码">
-					<span class="input-group-addon">3415</span>
+					<input type="text" class="form-control txtVerification" id ="Txtidcode" placeholder="验证码">
+					<span class="input-group-addon" id="idcode"></span>
 				</div>
 				<a href="#">忘记密码？</a>
 				<button type="button" class="btn btn-primary" 

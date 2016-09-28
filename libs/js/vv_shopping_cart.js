@@ -65,8 +65,9 @@ $(function(){
 	//数量栏 数字改变事件
 	$('tbody tr td input:text').change(function(){
 		var num=$(this).val();
-		if(num<0){
+		if(num<0||isNaN(num)){
 			num=0;
+			$(this).val(num);
 		}
 		$(this).siblings('input').val(num);
 		var price=$(this).parent().prev().text();

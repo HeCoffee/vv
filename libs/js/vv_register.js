@@ -30,17 +30,32 @@ $(function(){
 	}		
 	});
 	
+	$.idcode.setCode();
 	
 	var user;
 	var psw;
 	$('#form1 .btn').click(function(){
+		var IsBy = $.idcode.validateCode();
 		if($('#form1').valid()==true){
-			$('.rg_bigbox').hide().eq(1).show();
-			/*填写账户信息*/
-			$('.step li:eq(1)').addClass('now_bd');
-			$('.step li span:eq(1)').addClass('now');
-			user=$('.rg_bigbox input[name=userPhone]').val();
-			$('#form2 span:eq(0)').html(user);
+			//判断验证码
+			if($('#form1 :checked')[0]){
+				if(IsBy==true){
+				$('.rg_bigbox').hide().eq(1).show();
+				/*填写账户信息*/
+				$('.step li:eq(1)').addClass('now_bd');
+				$('.step li span:eq(1)').addClass('now');
+				user=$('.rg_bigbox input[name=userPhone]').val();
+				$('#form2 span:eq(0)').html(user);
+				}
+				else{
+					alert('验证码输入错误');
+				}
+			}
+			else{
+				alert('请阅读服务协议');
+			}
+			
+			
 		}
 	})
 	$('#form2 .btn').click(function(){

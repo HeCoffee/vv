@@ -3,6 +3,7 @@ $(function(){
 	$('.header_box').load('header.html',function(){		
 		$('.kinds .btn').trigger('click');
 	});
+	
 	$('#list_footer').load('footer.html');
 	$('.content_box .leftBox ul li ul li ul').slideUp(0).eq(0).slideDown(0);
 	$('.content_box .leftBox .listbtn').click(function(){
@@ -30,6 +31,7 @@ $(function(){
 				borderBottomColor:'#E6E6E6',
 			})
 	});
+	
 	var data=window.location.search;
 	data=data.replace('?','');
 	var pageIndex=1;//默认页面为1
@@ -40,6 +42,79 @@ $(function(){
 		page=arr[0].split('=');
 		pageIndex=page[1];
 	}
+	
+	//排序函数（冒泡）
+	function sortArry(arr,li){
+		if(li==0){
+			//小到大
+			for(var n=0;n<arr.length-1;n++){
+				for(var i=0;i<arr.length-1-n;i++){
+					if(parseInt(arr[i].price)>parseInt(arr[i+1].price)){
+						var tem=arr[i];
+						arr[i]=arr[i+1];
+						arr[i+1]=tem;
+					}
+				}
+			}
+		}
+		else if(li==1){
+			//大到小
+			
+			for(var n=0;n<arr.length-1;n++){
+				for(var i=0;i<arr.length-1-n;i++){
+					if(parseInt(arr[i].price)<parseInt(arr[i+1].price)){
+						var tem=arr[i];
+						arr[i]=arr[i+1];
+						arr[i+1]=tem;
+					}
+				}
+			}
+		}
+		
+	}
+	
+	
+	var rules=1;
+	//价格排序功能
+	$('.rightTitle li:eq(3)').click(function(){
+		$('.rightTitle li').removeClass()
+		$(this).addClass('now_sq');
+		if(rules==1){
+				rules=0;
+				$('i',this).removeClass().addClass('icon_up');
+			}
+			else if(rules==0){
+				rules=1;
+				$('i',this).removeClass().addClass('icon_down');
+		}
+			
+		$.get("libs/JSON/productdata.json",function(data){
+			var obj=data['page'+pageIndex];
+			sortArry(obj,rules);
+			var str="";
+			for(var i=0;i<obj.length;i++){
+				if(i>0){
+					str+='<div class="list_Box"><dl><dt><a href="product1.html"><img src="';
+				}
+				else{
+					str+='<div class="list_Box"><dl><dt><a href="product.html"><img src="';
+				}
+				str+=obj[i].src+'"/></a></dt>';
+				str+='<dd><a href="#">'+obj[i].introduction+'</a><br /><span>¥';
+				str+=obj[i].price+'</span>';
+				str+='<span class="out_price">¥'+obj[i].outprice+'</span><p>库存';
+				str+=obj[i].stock+'</p></dd></dl></div>';
+			}
+			$('.rightBox .list_BigBox').html(str);
+		
+		
+		})
+	})
+	
+	
+	
+	
+	
 	$.get("libs/JSON/productdata.json",function(data){
 		var num=0;
 //		加载页数按钮

@@ -4,7 +4,7 @@ $(function(){
 		//加载时 判断是否已经有商品在购物车
 		if($.cookie('cartli')!=undefined){
 		var arr1=JSON.parse($.cookie('cartli'));
-		addcart(arr1);
+			addcart(arr1);
 		}
 	});
 	$('.product_footer').load('footer.html');
@@ -104,12 +104,21 @@ $(function(){
 	
 	function addcart(arr){
 		//添加到两边购物车
-		var str1='';
-		var str2='';
-		
+		var str1='';//小购物车的html
+		var str2='';//右边购物车的html
+		var num=arr.length;
+		if(num==0){
+			$('.goods_num').text(num).hide();
+		}
+		else{
+			$('.goods_num').text(num).show();
+		}
+		var str3='共<b>'+num+'</b>种商品，总计金额<b>¥';//总共金额的html
+		var alltotal=0;
 		for(var j=0;j<arr.length;j++){
 			console.log(123);
 			var pro_price=parseInt(arr[j].price);
+			alltotal+=pro_price*arr[j].account;
 			str1+='<li><img src="';
 			str1+=arr[j].src+'"/><dl><dt><a href="#">';
 			str1+=arr[j].title+'</a></dt><dd>¥';
@@ -120,6 +129,8 @@ $(function(){
 			str2+=pro_price.toFixed(2)+'</span>×'+arr[j].account+'</dd></dl>';
 			str2+='<span class="closeLi">×</span></li>';
 		}
+		str3+=alltotal+'</b>';
+		$('.goods_charge').html(str3);
 		$('.cart ul').html(str1);
 		$('#right_cart_ul').html(str2);
 		//重新加载删除功能
@@ -169,7 +180,7 @@ $(function(){
 		var id=$('.goods_summary p:eq(0)').attr('idcode');
 		var prObj=new productObj(id);
 		
-		
+		//判断cookice是否存在
 		if($.cookie('cartli')==undefined){
 			var arr=[];
 			arr.push(prObj);
@@ -195,7 +206,7 @@ $(function(){
 		$('.right_cart').trigger('click');
 		var timer=window.setTimeout(function(){
 			$('.right_cart').trigger('click');
-		},2000)
+		},1000)
 		
 		//操作完当前页面，保存cookice
 		var cookicData=JSON.stringify(arr);

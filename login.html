@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="libs/css/vv_common.css"/>
 		<link rel="stylesheet" type="text/css" href="libs/css/vv_login.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/css/jquery.idcode.css"/>
 		<script src="libs/js/jquery-1.12.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="libs/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
@@ -14,6 +15,7 @@
 		<script src="libs/jquery-validation-1.15.0/src/localization/messages_zh.js" type="text/javascript" charset="utf-8"></script>
 		<script src="libs/js/vv_login.js" type="text/javascript" charset="utf-8"></script>
 		<script src="libs/jquery-cookie/jquery.cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/js/jquery.idcode.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="lg_header">
@@ -46,8 +48,8 @@
 					</div>
 					<div class="id_code input-group">
 						<span class="input-group-addon"><img src="libs/images/index/register-yanzhengma-icon.png"/></span>
-						<input type="text" class="form-control required" placeholder="验证码" name="icode">
-						<span class="input-group-addon">3415</span>
+						<input type="text" class="form-control required txtVerification" id="Txtidcode" placeholder="验证码" name="icode">
+						<span class="input-group-addon" id="idcode"></span>
 					</div>
 					<a href="#">忘记密码？</a>
 					<button type="button" class="btn btn-primary" 

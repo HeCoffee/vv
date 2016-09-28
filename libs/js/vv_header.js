@@ -147,6 +147,7 @@ $(function() {
 			})
 		}
 	})
+	//收起购物车
 	$('.right_cart_ul_icon').click(function() {
 		$('.right_cart_ul').stop().animate({
 			right: '-162px'
@@ -155,6 +156,7 @@ $(function() {
 		})
 	})
 
+	//右边登录框显示/隐藏
 	$('.right_login:eq(0)').click(function() {
 		$('.right_login_box').fadeToggle();
 	})
@@ -163,6 +165,7 @@ $(function() {
 		$('.right_login_box').fadeToggle();
 	})
 
+	//移动在导航栏会出现详细导航页
 	$('.bottom_nav .nav li').hover(function() {
 		var num = $('.bottom_nav .nav li').index(this);
 		if(num < 1 || num > 2) {
@@ -178,31 +181,41 @@ $(function() {
 		$('.bottom_nav .nav_kinds').eq(num - 1).hide();
 
 	})
-
+	
+	//移动在导航栏会出现详细导航页
 	$('.bottom_nav .nav_kinds').hover(function() {
 		$(this).show();
 	}, function() {
 		$(this).hide();
 	})
 
+
+	//回到顶部
 	$('.right_cart_box .btn').click(function() {
-		$(document).scrollTop(0);
+		$('body,html').animate({scrollTop:0},500);
 	})
 
+	$.idcode.setCode();
 	$('.right_login_box .btn').click(function() {
+		var IsBy = $.idcode.validateCode();
 		var user = $('.right_login_box input[name=user]').val();
 		var pwd = $('.right_login_box input[name=psw]').val();
 		$.get('libs/JSON/userdata.json', function(data) {
 			var oUser = data.login;
 			for(var i = 0; i < oUser.length; i++) {
 				if(oUser[i].user == user && oUser[i].pwd == pwd) {
-					alert("登录成功");
-					window.location.href = "index.html?user=" + user ;
-					return;
+					if(IsBy==true){
+						alert("登录成功");
+						window.location.href = "index.html?user=" + user ;
+						return;
+					}
+					else{
+						alert("验证码错误");
+						return;
+					}
 				}
 			}
 			alert("用户名/密码错误！");
-			console.log(oUser);
 		})
 
 		//	$.cookie('user',user);
@@ -210,24 +223,46 @@ $(function() {
 		//	window.location='index.html';
 	})
 
-	if(window.location.search) {
-		var name=window.location.search;
-		name=name.replace('?','');
-//		var arr=name.split('?');
-//		name=arr[1]
+
+//	//用search方式判断是否登录了页面
+//	if(window.location.search) {
+//		var name=window.location.search;
+//		name=name.replace('?','');
+////		var arr=name.split('?');
+////		name=arr[1]
+//		console.log(name);
+//		if(name.search('user')>=0){
+//			var star=name.search('user');
+//			name=name.slice(star,name.length);
+//			console.log(name);
+//			var data=name.split('&');
+//			var UserName=data[0].split('=');
+//			var str = UserName[1] + ' 您好，欢迎来到<a href="#">为为商城</a>'
+//			$('.header_nav_right span').html(str);
+//			$('.right_login_box').remove();
+//		}
+//		
+//	}
+	
+	
+	//用cookice方式判断是否有账户登录了
+	if($.cookie('user')) {
+		var name=$.cookie('user');
 		console.log(name);
-		if(name.search('user')>=0){
-			var star=name.search('user');
-			name=name.slice(star,name.length);
-			console.log(name);
-			var data=name.split('&');
-			var UserName=data[0].split('=');
-			var str = UserName[1] + ' 您好，欢迎来到<a href="#">为为商城</a>'
-			$('.header_nav_right span').html(str);
-			$('.right_login_box').remove();
-		}
-		
+		var str =name + ' 您好，欢迎来到<a href="#"> 为为商城 </a><b>退出</b>'
+		$('.header_nav_right span').html(str);
+		$('.right_login_box').remove();
 	}
+	
+	$('.header_nav_right b').click(function(){
+		$.cookie('user','',{expires:-1});
+		window.location.href='index.html';
+	})
+	
+	
+	
+	
+	
 	//小购物车删除 购物信息
 	$('.closeli').click(function(){
 		$(this).parent().remove();
@@ -246,6 +281,86 @@ $(function() {
 	$('#go_cart').click(function(){
 		window.location.href='shopping_cart.html';
 	})
+	
+	
+	
+	
+	//头部加载时判断是否已经有购物信息 有则加进去
+	var arr=JSON.parse($.cookie('cartli'));
+	
+	
+	
+	function addcart(arr){
+		//添加到两边购物车
+		var str1='';//小购物车的html
+		var str2='';//右边购物车的html
+		var num=arr.length;
+		if(num==0){
+			$('.goods_num').text(num).hide();
+		}
+		else{
+			$('.goods_num').text(num).show();
+		}
+		var str3='共<b>'+num+'</b>种商品，总计金额<b>¥';//总共金额的html
+		var alltotal=0;
+		for(var j=0;j<arr.length;j++){
+			console.log(123);
+			var pro_price=parseInt(arr[j].price);
+			alltotal+=pro_price*arr[j].account;
+			str1+='<li><img src="';
+			str1+=arr[j].src+'"/><dl><dt><a href="#">';
+			str1+=arr[j].title+'</a></dt><dd>¥';
+			str1+=pro_price.toFixed(2)+'×'+arr[j].account+'</dd></dl><span class="closeli">×</span></li>';
+			str2+='<li><img src="';
+			str2+=arr[j].src+'"/><dl><dt><a href="#">';
+			str2+=arr[j].title+'</a></dt><dd><span>¥';
+			str2+=pro_price.toFixed(2)+'</span>×'+arr[j].account+'</dd></dl>';
+			str2+='<span class="closeLi">×</span></li>';
+		}
+		str3+=alltotal+'</b>';
+		$('.goods_charge').html(str3);
+		$('.cart ul').html(str1);
+		$('#right_cart_ul').html(str2);
+		//重新加载删除功能
+		//小购物车删除 购物信息
+		$('.closeli').click(function(){
+			var title=$(this).siblings('dl').children('dt').children('a').text();
+			deletcartDate(title);
+			$(this).parent().remove();
+		});
+		
+		//右边购物车删除购物信息
+		$('.closeLi').click(function(){
+			var title=$(this).siblings('dl').children('dt').children('a').text();
+			deletcartDate(title);
+			$(this).parent().remove();
+			
+		});	
+	}
+	
+	addcart(arr);
+	
+	
+	//简单的搜索功能
+	$('.search .search_btn').click(function(){
+		var txt=$('.search .search_txt').val();
+		if(txt==''){
+			return;
+		}
+		$.get('libs/JSON/productdata.json',function(data){
+			for(var k in data){
+				for(var i=0;i<data[k].length;i++){
+					if(data[k][i].introduction.search(txt)>0){
+						var num=k.substring(4,5);
+						window.location.href='list.html?page='+num;
+						return;
+					}
+				}
+			}
+		})
+	})
+	
+	
 	
 	
 })
