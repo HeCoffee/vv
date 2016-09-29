@@ -74,6 +74,20 @@ $(function(){
 	}
 	
 	
+	//加载列表函数
+	function loadList(obj){
+		var str="";
+		for(var i=0;i<obj.length;i++){
+			str+='<div class="list_Box"><dl><dt><a href="product.html?idcode='+obj[i].idcode+'"><img src="';
+			str+=obj[i].src+'"/></a></dt>';
+			str+='<dd><a href="#">'+obj[i].introduction+'</a><br /><span>¥';
+			str+=obj[i].price+'</span>';
+			str+='<span class="out_price">¥'+obj[i].outprice+'</span><p>库存';
+			str+=obj[i].stock+'</p></dd></dl></div>';
+		}
+		$('.rightBox .list_BigBox').html(str);
+	}
+	
 	var rules=1;
 	//价格排序功能
 	$('.rightTitle li:eq(3)').click(function(){
@@ -91,23 +105,7 @@ $(function(){
 		$.get("libs/JSON/productdata.json",function(data){
 			var obj=data['page'+pageIndex];
 			sortArry(obj,rules);
-			var str="";
-			for(var i=0;i<obj.length;i++){
-				if(i>0){
-					str+='<div class="list_Box"><dl><dt><a href="product1.html"><img src="';
-				}
-				else{
-					str+='<div class="list_Box"><dl><dt><a href="product.html"><img src="';
-				}
-				str+=obj[i].src+'"/></a></dt>';
-				str+='<dd><a href="#">'+obj[i].introduction+'</a><br /><span>¥';
-				str+=obj[i].price+'</span>';
-				str+='<span class="out_price">¥'+obj[i].outprice+'</span><p>库存';
-				str+=obj[i].stock+'</p></dd></dl></div>';
-			}
-			$('.rightBox .list_BigBox').html(str);
-		
-		
+			loadList(obj);
 		})
 	})
 	
@@ -127,22 +125,7 @@ $(function(){
 			//obj没定义就是没有这页；
 			alert("没有该页数");
 		}
-		var str="";
-		for(var i=0;i<obj.length;i++){
-			if(i>0){
-				str+='<div class="list_Box"><dl><dt><a href="product1.html"><img src="';
-			}
-			else{
-				str+='<div class="list_Box"><dl><dt><a href="product.html"><img src="';
-			}
-			str+=obj[i].src+'"/></a></dt>';
-			str+='<dd><a href="#">'+obj[i].introduction+'</a><br /><span>¥';
-			str+=obj[i].price+'</span>';
-			str+='<span class="out_price">¥'+obj[i].outprice+'</span><p>库存';
-			str+=obj[i].stock+'</p></dd></dl></div>';
-		}
-		$('.rightBox .list_BigBox').html(str);
-		console.log(page);
+		loadList(obj);
 	})
 	
 	//下方的翻页按钮

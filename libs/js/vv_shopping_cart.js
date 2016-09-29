@@ -11,7 +11,7 @@ $(function(){
 		var alltotal=0;
 		$('tbody tr').each(function(index,obj){
 			if($(':checked',obj).attr('checked')){
-				alltotal+=parseInt($(obj).children('td:eq(4)').text());
+				alltotal+=parseFloat($(obj).children('td:eq(4)').text());
 			}
 		});	
 		$('tfoot td span').text(alltotal.toFixed(2));
@@ -26,7 +26,7 @@ $(function(){
 			str+='<tr><td><input type="checkbox" name="" id="" value="" checked="checked"/></td><td><a href=""><img src="';
 			str+=arr[i].src+'" alt="" />';
 			str+=arr[i].title+'</a></td><td>';
-			var tr_price=parseInt(arr[i].price);
+			var tr_price=parseFloat(arr[i].price);
 			str+=tr_price.toFixed(2)+'</td><td><b>+</b><input type="text" name="" id="" value="';
 			str+=arr[i].account+'" /><b>-</b></td><td>';
 			var tr_total=arr[i].account*tr_price;

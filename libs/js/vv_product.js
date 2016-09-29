@@ -7,6 +7,37 @@ $(function(){
 			addcart(arr1);
 		}
 	});
+	
+	//动态加载页面
+	if(window.location.search){
+		var proId=window.location.search;
+		var id=proId.replace('?idcode=','');
+		$.get("libs/JSON/production.json",function(data){
+			var str='<img src="'+data[id].Smallsrc[0]+'" jqimg="'+data[id].Bigsrc[0]+'">';
+			$('.left_detail .bigPic').html(str);
+			var str3='';
+			for(var i=0;i<data[id].Smallsrc.length;i++){
+				str3+='<li><img src="'+data[id].Smallsrc[i]+'" jqimg="'+data[id].Bigsrc[i]+'" width="54px" height="54px"/></li>';
+			}
+			$('.imglist ul').html(str3);
+			//图片动态添加函数
+			$('.left_bottom_sbox .imglist li').mouseenter(function(){
+				var smallsrc=$('img',this).attr('src');
+				var bigsrc=$('img',this).attr('jqimg');
+				var img_str='<img src="'+smallsrc+'" jqimg="'+bigsrc+'">';
+				$('.left_detail .bigPic').html(img_str);
+			})
+			
+			$('.goods_summary p:eq(0)').html(data[id].titile).attr('idcode',id);
+			$('.goods_middle strong:eq(0)').html(data[id].out_price);
+			$('.goods_middle strong:eq(1)').html(data[id].now_price);
+		});
+	}
+	
+	
+	
+	
+	
 	$('.product_footer').load('footer.html');
 	$(".bigPic").jqueryzoom({
 					xzoom: 500, //放大区域宽度
@@ -117,7 +148,7 @@ $(function(){
 		var alltotal=0;
 		for(var j=0;j<arr.length;j++){
 			console.log(123);
-			var pro_price=parseInt(arr[j].price);
+			var pro_price=parseFloat(arr[j].price);
 			alltotal+=pro_price*arr[j].account;
 			str1+='<li><img src="';
 			str1+=arr[j].src+'"/><dl><dt><a href="#">';

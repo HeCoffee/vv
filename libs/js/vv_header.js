@@ -337,6 +337,30 @@ $(function() {
 			
 		});	
 	}
+		//删除cookice数据
+	function deletcartDate(txt){
+		var arr=JSON.parse($.cookie('cartli'));
+		for(var i=0;i<arr.length;i++){
+			if(arr[i].title==txt){
+//				arr[i].account=parseInt(arr[i].account)+parseInt($('.account_box input').val());
+//				none=1;
+				break;
+				console.log(1);
+			}
+		}
+		arr.splice(i,1);
+		addcart(arr);
+		//删除完成当前页面，保存cookice
+		var cookicData=JSON.stringify(arr);
+		$.cookie('cartli',cookicData,{expires:7});
+		
+		
+		
+	}
+	
+	
+	
+	
 	
 	addcart(arr);
 	

@@ -1,0 +1,45 @@
+[
+{	"Bigsrc":[
+		"libs/images/product/product_big0.jpg",
+		"libs/images/product/product_big1.jpg",
+		"libs/images/product/product_big2.jpg"
+	],
+	"Smallsrc":[
+		"libs/images/product/product_small0.jpg",
+		"libs/images/product/product_small1.jpg",
+		"libs/images/product/product_small2.jpg"
+	],
+	"titile":"梵瓦伦 枫木实木复合地板 5007 平方米",
+	"out_price":"¥388.00",
+	"now_price":"¥185.50"
+},
+{	"Bigsrc":[
+		"libs/images/product/product_big3.jpg",
+		"libs/images/product/product_big4.jpg",
+		"libs/images/product/product_big5.jpg"
+	],
+	"Smallsrc":[
+		"libs/images/product/product_small3.jpg",
+		"libs/images/product/product_small4.jpg",
+		"libs/images/product/product_small5.jpg"
+	],
+	"titile":"汇丽地板 实木复合地板 新印尼林系列 天然木皮 F16",
+	"out_price":"¥208.00",
+	"now_price":"¥145.50"
+},
+{	"Bigsrc":[
+		"libs/images/product/product_big6.jpg",
+		"libs/images/product/product_big7.jpg",
+		"libs/images/product/product_big8.jpg"
+	],
+	"Smallsrc":[
+		"libs/images/product/product_small6.jpg",
+		"libs/images/product/product_small7.jpg",
+		"libs/images/product/product_small8.jpg"
+	],
+	"titile":"汇丽地板 强化复合地板 大班系列 BL-D56017",
+	"out_price":"¥168.00",
+	"now_price":"¥115.50"
+}
+
+]
